@@ -27,14 +27,30 @@ def all_winter_holiday_supplies(holiday_hash)
 end
 
 def all_supplies_in_holidays(holiday_hash)
-  holiday_hash.each do |season, holiday|
-    new_season = season.to_s
-    printed_season = new_season.split
-      printed_season.each do |x|
+  season_keys = 
+  holiday_hash.each do |key|
+    key.to_s.capitalize!
+  end
+  
+  holiday_keys = 
+  holiday_hash.each do |key, value|
+    values = value.to_s.split("_")
+      values.each do |x|
         x.capitalize!
       end
-    printed_season.join(" ")
+    end
+  
+  supplies =
+  holiday_hash.each do |season, holiday|
+    holiday.each do |supply|
+      supply.join(" ")
+    end
   end
+  
+  
+      
+  
+  
 end
   
     
